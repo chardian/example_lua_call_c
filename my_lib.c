@@ -10,6 +10,7 @@ static int add(lua_State *L){
     int b = luaL_checkinteger(L,2);
     int c = a + b;
     lua_pushinteger(L,c);
+    //if return 0, lua can't get the result
     return 1;
 }
 
@@ -29,7 +30,3 @@ LUALIB_API int luaopen_mylib(lua_State *L){
     luaL_newlib(L,mylib_functions);
     return 1;
 }
-
-//(tried /usr/include/lua/5.3/lua.h 
-// /usr/include/lua5.3/lua.h /usr/include/lua-5.3/lua.h 
-// /usr/include/lua53/lua.h /usr/include/lua.h)
