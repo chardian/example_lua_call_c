@@ -15,10 +15,11 @@ make
 lua a.lua
 
 ``` 
-function: 0x7f54e0b831d5
+function: 0x7f718bec7247
 function
 what lua open my lib on onon
-table: 0x5618a4f360f0
-on enter lua hello from c
-hello from c
+table: 0x5623340dd150
+on enter hello_from_c
+on enter add
+90
 ```
