@@ -4,22 +4,23 @@
 #include <lualib.h>
 
 
-static int add(int a,int b){
-    return a+b;
+static int add(lua_State *L){
+    printf("on enter add \n");
+    int a = luaL_checkinteger(L,1);
+    int b = luaL_checkinteger(L,2);
+    int c = a + b;
+    lua_pushinteger(L,c);
+    return 1;
 }
 
-static void say(){
-    printf("hello from c\n");
-}
-
-static int lua_hello_from_c(lua_State *L){
-    printf("on enter lua hello from c\n");
-    say();
-    return 0;
+static int hello_from_c(lua_State *L){
+    printf("on enter hello_from_c\n");
+    return 1;
 }
 
 static const struct luaL_Reg mylib_functions[] = {
-    {"hello_from_c",lua_hello_from_c},
+    {"hello_from_c",hello_from_c},
+    {"add",add},
     {NULL,NULL}
 };
 
